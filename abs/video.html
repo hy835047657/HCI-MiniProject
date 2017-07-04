@@ -104,16 +104,20 @@
 
         function getEmbedLink(url,id) {
           var embedlink = url.replace("youtu.be/","www.youtube.com/embed/");
-          var str1 =  "<iframe width=\"560\" height=\"315\" src=\"";
+          var str1 =  "<iframe width=\"560\" height=\"420\" src=\"";
           var str2 =  "\" frameborder=\"0\" allowfullscreen></iframe>";
           document.getElementById(id).innerHTML = str1+embedlink+str2;
         }
 
-        getEmbedLink("https://youtu.be/_YVhhXc2pSY","video1");
-        getEmbedLink("https://youtu.be/JEkxJKCPiFU","video2");
-        getEmbedLink("https://youtu.be/IkMmABQ9SkM","video3");
-        getEmbedLink("https://youtu.be/tMr3-vzSxjs","video4");
-        getEmbedLink("https://youtu.be/HBnA65vmWkg","video5");
+        var url_string = window.location;
+        var url = new URL(url_string);
+        var c = url.searchParams.get("id");
+
+        getEmbedLink("https://youtu.be/"+c,"video1");
+//        getEmbedLink("https://youtu.be/JEkxJKCPiFU","video2");
+//        getEmbedLink("https://youtu.be/IkMmABQ9SkM","video3");
+//        getEmbedLink("https://youtu.be/tMr3-vzSxjs","video4");
+//        getEmbedLink("https://youtu.be/HBnA65vmWkg","video5");
 
         </script>
 </body>

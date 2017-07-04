@@ -64,9 +64,9 @@
       color: #FFFFFF;
     }
      .demo-card-wide.mdl-card {
-       width: 512px;
-       left: 250px;
+       width: 100%;
        top: 0px;
+         background-color: white;
      }
     .demo-card-wide > .mdl-card__title1 {
       color: #fff;
@@ -86,32 +86,50 @@
     .demo-card-wide > .mdl-card__menu {
       color: #fff;
     }
+
+    .mdl-layout__content {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .demo-card-wide{
+        margin-top: 3rem;
+        border: 2px whitesmoke solid;
+    }
+
+
+    .cardtitle{
+        padding: 5px 15px;
+        color: dimgray;
+    }
+                                                                                                                                                                                     
     </style>
   </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
   <div id="popView">
 
       <ul class="nav sidebar-nav">
-        <li class="sidebar-brand">
-          <a href="#">
-            Your Data
-          </a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-heart"></i>  Heart Rates: 97/s</a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-clock-o"></i> Timer: 30 mins </a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-free-code-camp"></i> Calories: 1200 cal</a>
-        </li>
+          <li class="sidebar-brand">
+              <a href="#">
+                  Your Data
+              </a>
+          </li>
+          <li>
+              <a href="#"><i class="fa fa-heart"></i>  Heart Rates: 97/s</a>
+          </li>
+          <li>
+              <a href="#"><i class="fa fa-clock-o"></i> Timer: 30 mins </a>
+          </li>
+          <li>
+              <a href="#"><i class="fa fa-free-code-camp"></i> Calories: 1200 cal</a>
+          </li>
 
       </ul>
 
 
 
   </div>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <main class="mdl-layout__content">
@@ -119,47 +137,49 @@
 
 
           <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <h2 class="cardtitle">Classic</h2>
             <div class="mdl-card__title1">
-              <h4 class="mdl-card__title-text">Classic</h4>
+
             </div>
 
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                Started
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="classic/classic.html">
+                Start
               </a>
             </div>
           </div>
 
           <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title2" >
-              <h2 class="mdl-card__title-text" >ABS</h2>
+              <h2 class="cardtitle" >Abs</h2>
+
+              <div class="mdl-card__title2" >
+
             </div>
 
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                Started
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="abs/abs.html">
+                Start
               </a>
             </div>
 
           </div>
 
           <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title3" >
-              <h2 class="mdl-card__title-text" >LEGS</h2>
+
+              <h2 class="cardtitle" >Legs</h2>
+              <div class="mdl-card__title3" >
+
             </div>
 
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                Started
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="legs/legs.html">
+                Start
               </a>
             </div>
-
           </div>
-
-
 
         </div>
-      </main>>
+      </main>
     </div>
 
 
