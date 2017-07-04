@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Legs</title>
+    <title>Clasic</title>
     <link rel="stylesheet" href=" http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href=" http://www.bootcss.com/p/buttons/css/buttons.css">
 
@@ -30,12 +30,12 @@
 
     <div class="row mt-5">
         <div class="col-12 mt-5 text-center">
-            <p class="mt-5" id="name" style="font-size:60px;color:slategrey ; marigin-top:200px">Legs</p>
+            <p class="mt-5" id="name" style="font-size:60px;color:slategrey ; marigin-top:200px">Classic</p>
         </div>
         <div class="mt-5 mx-auto row w-100 justify-content-md-center">
 
-            <div class="col-2">
-                <button class="button  button-raised">
+            <div id="prevBtn" class="col-2">
+                <button onclick="prev()" class="button  button-raised">
                     <
                 </button>
             </div>
@@ -45,11 +45,13 @@
                 <a id="video1"/>
             </div>
 
-            <div class="col-2">
-                <button class="button  button-raised">
+            <div  class="col-2">
+
+                <button onclick="next()" class="button  button-raised">
                     >
                 </button>
             </div>
+
         </div>
         <div class="mdl-card mdl-cell mdl-cell--8-col-desktop col-12 mt-5 ml-3">
 
@@ -67,64 +69,79 @@
     </div>
 </div>
 <script type="text/javascript">
-    var abs = [
-        "https://youtu.be/_YVhhXc2pSY",
-        "https://youtu.be/JEkxJKCPiFU",
-        "https://youtu.be/IkMmABQ9SkM",
-        "https://youtu.be/tMr3-vzSxjs",
-        "https://youtu.be/HBnA65vmWkg",
-        "https://youtu.be/FvDcThfQqBM",
-        "https://youtu.be/26gpYTauajw",
-        "https://youtu.be/wkD8rjkodUI",
-        "https://youtu.be/RW25fbkQxVQ",
-        "https://youtu.be/Iwyvozckjak"
+    var classicID = [
+        "1b98WrRrmUs",
+        "_a29JwDaVJw",
+        "YU0gWh72a3k",
+        "26gpYTauajw",
+        "dG75KOf4EtY",
+        "Dd7_BtsSDJY",
+        "koOIMPoa9SE",
+        "Iwyvozckjak",
+        "Pf7wZvraWV0",
+        "t7fg6xUK48c"
+    ];
+    var classicName = [
+        "Jumping Jacks",
+        "High Knees",
+        "Push Ups with Rotation",
+        "Mountain Climbers",
+        "Step Ups",
+        "Jump-Rope",
+        "Side Lunge",
+        "Bicycle Crunches",
+        "Burpee Exercise",
+        "Aerobic Dance",
     ];
 
-    var leg = [
-        "https://youtu.be/0RGCezLuP6c",
-        "https://youtu.be/YYHDXY26GjE",
-        "https://youtu.be/UWgWxKKdycU",
-        "https://youtu.be/GfkDMGmiggA",
-        "https://youtu.be/tMr3-vzSxjs",
-        "https://youtu.be/dG75KOf4EtY",
-        "https://youtu.be/_a29JwDaVJw",
-        "https://youtu.be/zNm4d0jPiLI",
-        "https://youtu.be/u7sTzgNw1sg",
-        "https://youtu.be/a7NrtiLfQ98",
-        "https://youtu.be/koOIMPoa9SE"
-    ];
-
-    var aerobics = [
-        "https://youtu.be/1b98WrRrmUs",
-        "https://youtu.be/_a29JwDaVJw",
-        "https://youtu.be/YU0gWh72a3k",
-        "https://youtu.be/26gpYTauajw",
-        "https://youtu.be/dG75KOf4EtY",
-        "https://youtu.be/Dd7_BtsSDJY",
-        "https://youtu.be/koOIMPoa9SE",
-        "https://youtu.be/Iwyvozckjak",
-        "https://youtu.be/Pf7wZvraWV0",
-        "https://youtu.be/t7fg6xUK48c"
-    ];
-
-    function getEmbedLink(url, id) {
+    function getEmbedLink(url, idIframe) {
         var embedlink = url.replace("youtu.be/", "www.youtube.com/embed/");
         var str1 = "<iframe width=\"560\" height=\"420\" src=\"";
         var str2 = "\" frameborder=\"0\" allowfullscreen></iframe>";
-        document.getElementById(id).innerHTML = str1 + embedlink + str2;
+        document.getElementById(idIframe).innerHTML = str1 + embedlink + str2;
     }
 
     var url_string = window.location;
     var url = new URL(url_string);
-    var c = url.searchParams.get("id");
+    var id = url.searchParams.get("id");
     var n = url.searchParams.get("name");
+    var currentIdIndex = classicID.indexOf(id);
+
     document.getElementById('name').innerHTML = n;
 
-    getEmbedLink("https://youtu.be/" + c, "video1");
-    getEmbedLink("https://youtu.be/" + c, "video2");
-    getEmbedLink("https://youtu.be/" + c, "video3");
-    getEmbedLink("https://youtu.be/" + c, "video4");
-    getEmbedLink("https://youtu.be/" + c, "video5");
+    getEmbedLink("https://youtu.be/" + id, "video1");
+
+
+    function prev(){
+      if(currentIdIndex == 0){
+        var prevId = classicID[classicID.length-1];
+        var prevName = classicName[classicName.length-1];
+        var moveTo = "http://localhost/HCI-MiniProject/classic/video.html?id="+prevId+"&name="+prevName;
+        window.location = moveTo;
+      }
+      else{
+        var prevId = classicID[currentIdIndex-1];
+        var prevName = classicName[currentIdIndex-1];
+        var moveTo = "http://localhost/HCI-MiniProject/classic/video.html?id="+prevId+"&name="+prevName;
+        window.location = moveTo;
+      }
+
+    }
+
+    function next(){
+      if(currentIdIndex == classicID.length-1){
+        var nextId = classicID[0];
+        var nextName = classicName[0];
+        var moveTo = "http://localhost/HCI-MiniProject/classic/video.html?id="+nextId+"&name="+nextName;
+        window.location = moveTo;
+      }
+      else{
+        var nextId = classicID[currentIdIndex+1];
+        var nextName = classicName[currentIdIndex+1];
+        var moveTo = "http://localhost/HCI-MiniProject/classic/video.html?id="+nextId+"&name="+nextName;
+        window.location = moveTo;
+      }
+    }
 
 </script>
 </body>
