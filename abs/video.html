@@ -116,14 +116,14 @@
       if(currentIdIndex == 0){
         var prevId = absID[absID.length-1];
         var prevName = absName[absName.length-1];
-        var moveTo = "http://localhost/HCI-MiniProject/abs/video.html?id="+prevId+"&name="+prevName;
+        var moveTo = "video.html?id="+prevId+"&name="+prevName;
         window.location = moveTo;
 
       }
       else{
         var prevId = absID[currentIdIndex-1];
         var prevName = absName[currentIdIndex-1];
-        var moveTo = "http://localhost/HCI-MiniProject/abs/video.html?id="+prevId+"&name="+prevName;
+        var moveTo = "video.html?id="+prevId+"&name="+prevName;
         window.location = moveTo;
       }
 
@@ -133,13 +133,13 @@
       if(currentIdIndex == absID.length-1){
         var nextId = absID[0];
         var nextName = absName[0];
-        var moveTo = "http://localhost/HCI-MiniProject/abs/video.html?id="+nextId+"&name="+nextName;
+        var moveTo = "video.html?id="+nextId+"&name="+nextName;
         window.location = moveTo;
       }
       else{
         var nextId = absID[currentIdIndex+1];
         var nextName = absName[currentIdIndex+1];
-        var moveTo = "http://localhost/HCI-MiniProject/abs/video.html?id="+nextId+"&name="+nextName;
+        var moveTo = "video.html?id="+nextId+"&name="+nextName;
         window.location = moveTo;
       }
     }
